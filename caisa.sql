@@ -1,0 +1,110 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.3
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 10-05-2019 a las 06:51:09
+-- Versión del servidor: 10.1.36-MariaDB
+-- Versión de PHP: 7.2.11
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de datos: `caisa`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `aviones_pesos`
+--
+
+CREATE TABLE `aviones_pesos` (
+  `id` bigint(20) NOT NULL,
+  `marca` varchar(50) NOT NULL,
+  `modelo` varchar(50) NOT NULL,
+  `version` varchar(50) NOT NULL,
+  `peso_operacional` double DEFAULT '0',
+  `carga_paga` double DEFAULT '0',
+  `peso_cero_combustible` double DEFAULT '0',
+  `peso_taxi` double DEFAULT '0',
+  `peso_despegue_tow` double DEFAULT '0',
+  `peso_aterrizaje` double DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `aviones_pesos`
+--
+
+INSERT INTO `aviones_pesos` (`id`, `marca`, `modelo`, `version`, `peso_operacional`, `carga_paga`, `peso_cero_combustible`, `peso_taxi`, `peso_despegue_tow`, `peso_aterrizaje`) VALUES
+(1, 'boeing', '737-300', 'CFM56-3B1', 31479, 16148, 47627, 56699, 56472, 51710),
+(38, 'boeing', '737-300', 'CFM56-3B2', 32904, 15404, 48308, 62369, 62142, 51710),
+(39, 'Boeing', '737-400', 'CFM56-3B2', 33189, 18067, 51256, 63049, 62823, 54885),
+(40, 'Boeing', '737-500', 'CFM56-3B1', 31311, 15182, 46493, 52617, 52390, 498965),
+(41, 'Boeing', '737-500', 'CFM56-3B1', 31311, 15182, 46493, 56699, 60555, 49895),
+(42, 'Boeing', '737-600', 'CFM56-3B1', 36378, 15105, 51483, 56472, 56245, 54658),
+(43, 'Boeing', '737-700', 'WITH WINGLETS', 37648, 17010, 54658, 60555, 60328, 58060),
+(44, 'Boeing', '737-800', 'WITH WINGLETS', 41413, 20276, 61689, 70760, 70534, 65317),
+(45, 'Boeing', '737-900', 'WITH WINGLETS', 42901, 19831, 62732, 74616, 74389, 66361),
+(46, 'Boeing', '737-900', 'WITH WINGLETS', 44677, 17830, 62732, 74616, 74389, 66361),
+(47, 'AIRBUS', 'A320-200', 'WV000', 0, 0, 60500, 73900, 73500, 64500),
+(48, 'AIRBUS', 'A320-200', 'WV001', 0, 0, 60500, 68400, 68000, 64500),
+(49, 'AIRBUS', 'A320-200', 'WV002', 0, 0, 60500, 70400, 70000, 70000),
+(50, 'AIRBUS', 'A320-200', 'WV003', 0, 0, 60500, 75900, 75500, 64500),
+(51, 'AIRBUS', 'A320-200', 'WV004', 0, 0, 60500, 71900, 71500, 64500),
+(52, 'AIRBUS', 'A320-200', 'WV005', 0, 0, 60500, 67400, 67000, 64500),
+(53, 'AIRBUS', 'A320-200', 'WV006', 0, 0, 60500, 66400, 66000, 64500),
+(54, 'AIRBUS', 'A320-200', 'WV007', 0, 0, 60500, 77400, 77000, 64500),
+(55, 'AIRBUS', 'A320-200', 'WV008', 0, 0, 61000, 73900, 73500, 64500),
+(56, 'AIRBUS', 'A320-200', 'WV009', 0, 0, 61000, 75900, 75500, 64500),
+(57, 'AIRBUS', 'A320-200', 'WV0010', 0, 0, 61000, 77400, 77000, 64500),
+(58, 'AIRBUS', 'A320-200', 'WV0011', 0, 0, 62500, 75900, 75500, 66000),
+(59, 'AIRBUS', 'A320-200', 'WV0012', 0, 0, 62500, 77400, 77000, 66000),
+(60, 'AIRBUS', 'A320-200', 'WV0013', 0, 0, 61000, 71900, 71500, 64500),
+(61, 'AIRBUS', 'A320-200', 'WV0014', 0, 0, 61500, 73900, 73500, 64500),
+(62, 'AIRBUS', 'A320-200', 'WV0015', 0, 0, 61000, 74800, 78000, 64500),
+(63, 'AIRBUS', 'A320-200', 'WV0016', 0, 0, 62500, 73900, 73500, 66600),
+(64, 'AIRBUS', 'A320-200', 'WV0017', 0, 0, 62500, 78400, 78000, 66000),
+(65, 'AIRBUS', 'A320-200', 'WV0018', 0, 0, 62500, 71900, 71500, 66000),
+(66, 'AIRBUS', 'A320-200', 'WV0050', 0, 0, 62800, 73900, 73500, 66300),
+(67, 'AIRBUS', 'A320-200', 'WV0051', 0, 0, 64300, 77400, 73500, 67400),
+(68, 'AIRBUS', 'A320-200', 'WV0052', 0, 0, 62800, 77400, 77000, 66300),
+(69, 'AIRBUS', 'A320-200', 'WV0053', 0, 0, 64300, 73900, 77000, 67400),
+(70, 'AIRBUS', 'A320-200', 'WV0054', 0, 0, 62800, 79400, 79000, 66300),
+(71, 'AIRBUS', 'A320-200', 'WV0055', 0, 0, 64300, 79400, 79000, 67400),
+(72, 'AIRBUS', 'A320-200', 'WV0056', 0, 0, 62800, 70400, 70000, 66300),
+(73, 'AIRBUS', 'A320-200', 'WV0057', 0, 0, 64300, 70400, 70000, 67400);
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `aviones_pesos`
+--
+ALTER TABLE `aviones_pesos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `aviones_pesos`
+--
+ALTER TABLE `aviones_pesos`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
